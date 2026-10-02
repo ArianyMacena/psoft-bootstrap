@@ -8,10 +8,8 @@ public class Time {
     private List<Funcionario> desenvolvedores;
     private List<Sprint> sprints;
 
-    public Time(String nome, Produto produto, Funcionario gerente)
-    {
-        if (gerente.getPapel() != Papel.GERENTE)
-        {
+    public Time(String nome, Produto produto, Funcionario gerente) {
+        if (gerente.getPapel() != Papel.GERENTE) {
             throw new IllegalArgumentException("O time deve possuir um gerente.");
         }
         this.nome = nome;
@@ -21,24 +19,19 @@ public class Time {
         this.sprints = new ArrayList<>();
     }
 
-    public void adicionarDesenvolvedor(Funcionario dev)
-    {
-        if (dev.getPapel() != Papel.DESENVOLVEDOR)
-        {
+    public void adicionarDesenvolvedor(Funcionario dev) {
+        if (dev.getPapel() != Papel.DESENVOLVEDOR) {
             throw new IllegalArgumentException("Funcionario precisa ser desenvolvedor.");
         }
         this.desenvolvedores.add(dev);
     }
 
-    public void iniciarSprint(int numero, Funcionario lider)
-    {
-        if (!this.desenvolvedores.contains(lider))
-        {
+    public void iniciarSprint(int numero, Funcionario lider) {
+        if (!this.desenvolvedores.contains(lider)) {
             throw new IllegalArgumentException("O lider precisa ser desenvolvedor do time.");
         }
 
-        for (Funcionario dev : this.desenvolvedores)
-        {
+        for (Funcionario dev : this.desenvolvedores) {
             dev.setEhLider(false);
         }
 
@@ -46,28 +39,23 @@ public class Time {
         this.sprints.add(sprint);
     }
 
-    public String getNome()
-    {
+    public String getNome() {
         return this.nome;
     }
 
-    public Produto getProduto()
-    {
+    public Produto getProduto() {
         return this.produto;
     }
 
-    public Funcionario getGerente()
-    {
+    public Funcionario getGerente() {
         return this.gerente;
     }
 
-    public List<Funcionario> getDesenvolvedores()
-    {
+    public List<Funcionario> getDesenvolvedores() {
         return this.desenvolvedores;
     }
 
-    public List<Sprint> getSprints()
-    {
+    public List<Sprint> getSprints() {
         return this.sprints;
     }
 }

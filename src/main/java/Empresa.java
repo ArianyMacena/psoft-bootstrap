@@ -6,10 +6,8 @@ public class Empresa {
     private Funcionario productOwner;
     private List<Time> times;
 
-    public Empresa(String nome, Funcionario productOwner)
-    {
-        if (productOwner.getPapel() != Papel.PRODUCT_OWNER)
-        {
+    public Empresa(String nome, Funcionario productOwner) {
+        if (productOwner.getPapel() != Papel.PRODUCT_OWNER) {
             throw new IllegalArgumentException("A empresa precisa de um Product Owner.");
         }
         this.nome = nome;
@@ -17,32 +15,26 @@ public class Empresa {
         this.times = new ArrayList<>();
     }
 
-    public void adicionarTime(Time time)
-    {
+    public void adicionarTime(Time time) {
         this.times.add(time);
     }
 
-    public String getNome()
-    {
+    public String getNome() {
         return this.nome;
     }
 
-    public Funcionario getProductOwner()
-    {
+    public Funcionario getProductOwner() {
         return this.productOwner;
     }
 
-    public void setProductOwner(Funcionario productOwner)
-    {
-        if (productOwner.getPapel() != Papel.PRODUCT_OWNER)
-        {
+    public void setProductOwner(Funcionario productOwner) {
+        if (productOwner.getPapel() != Papel.PRODUCT_OWNER) {
             throw new IllegalArgumentException("O funcionario precisa ser Product Owner.");
         }
         this.productOwner = productOwner;
     }
 
-    public List<Time> getTimes()
-    {
+    public List<Time> getTimes() {
         return this.times;
     }
 }
